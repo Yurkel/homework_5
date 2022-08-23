@@ -1,13 +1,14 @@
-function adminCheck() {
-  const userEmail = prompt(`Enter email`)
-    .trim()
-    .toLowerCase()
-    .split(" ")
-    .join("");
-  const adminEmail = "admin@test.io";
+const userEmail = prompt(`Enter email`)
+  .trim()
+  .toLowerCase()
+  .split(" ")
+  .join("");
+const adminEmail = "admin@test.io";
 
+function adminCheck(userEmail) {
   if (userEmail !== adminEmail) {
-    return `Wrong email`;
+    alert("Wrong email");
+    return;
   }
 
   const userLogin = prompt(`Enter login`)
@@ -18,8 +19,11 @@ function adminCheck() {
   const adminLogin = "admin1234";
 
   if (userLogin !== adminLogin) {
-    return `Wrong login`;
+    alert("Wrong login");
+    return;
   }
 
-  return `You in`;
+  alert("You in");
 }
+
+adminCheck(userEmail);
